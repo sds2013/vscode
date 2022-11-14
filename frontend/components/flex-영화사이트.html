@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>송두선 NETFLIX</title>
+    <!-- 구글 무료 폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+    <!-- 아이콘 -->
+    <!-- (구)버전이니까 신버전 쓰고 싶은사람은 fontawesome 사이트 접속해 6번전 키 발급 받기 -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="flex-영화사이트.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- 영화상세정보 -->
+      <div class="movie-section">
+        <div class="back">
+          <a href="#"> Back to Home</a>
+        </div>
+        <div class="section-left">
+          <!-- 영화상세정보 (상여시간, 병점, 감독, 배우, 줄거리)-->
+
+          <!-- 영화 제목-->
+          <div class="movie-title"></div>
+          <!--평점, 투표, 상영시간, 개봉년도-->
+          <div class="movie-rating">
+            <span>Rating <i class="fa fa-star"></i> : <span id="rating"></span> </span>
+            <span>Votes <i class="fa fa-thumbs-up"></i> : <span id="votes"></span> </span>
+            <span>Runtime <i class="fa fa-film"></i> : <span id="runtime"></span> </span>
+            <span>Year <i class="fa fa-calendar"></i> : <span id="year"></span> </span>
+          </div>
+          <!-- 영화 줄거리-->
+          <div class="movie-plot"></div>
+          <!-- 감독, 배우, 장르, 수상내역-->
+          <div class="movie-info">
+            <div>
+              <span>Direction</span>
+              <span id="direction"></span>
+            </div>
+            <div>
+              <span>Stars</span>
+              <span id="stars"></span>
+            </div>
+            <div>
+              <span>Generes</span>
+              <span id="generes"></span>
+            </div>
+            <div>
+              <span>Languages</span>
+              <span id="languages"></span>
+            </div>
+            <div>
+              <span>Awards</span>
+              <span id="awards"></span>
+            </div>
+          </div>
+        </div>
+        <div id="movie-poster-0" class="section-rigth">
+          <!-- 영회 포스터 이미지-->
+        </div>
+      </div>
+      <!-- OMdb에서 가져올 영화, 시리즈 -->
+      <div class="movie-list">
+        <div class="site-titel">
+          <h2>Soen NETFLIX</h2>
+        </div>
+        <!-- 영화 -->
+        <div class="movie-row">
+          <div class="item" data-tilt>
+            <!-- 영화 포스터 이미지-->
+            <div id="movie-poster-0" class="poster"></div>
+            <!-- 영화 제목-->
+            <h4 id="movie-title-0" class="title"></h4>
+            <!-- 영화 개봉날짜-->
+            <p id="movie-year-0" class="year"></p>
+          </div>
+
+          <div class="item" data-tilt>
+            <div id="movie-poster-1" class="poster"></div>
+            <h4 id="movie-title-1" class="title"></h4>
+            <p id="movie-year-1" class="year"></p>
+          </div>
+
+          <div class="item" data-tilt>
+            <div id="movie-poster-2" class="poster"></div>
+            <h4 id="movie-title-2" class="title"></h4>
+            <p id="movie-year-2" class="year"></p>
+          </div>
+
+          <div class="item" data-tilt>
+            <div id="movie-poster-3" class="poster"></div>
+            <h4 id="movie-title-3" class="title"></h4>
+            <p id="movie-year-3" class="year"></p>
+          </div>
+
+          <div class="item" data-tilt>
+            <div id="movie-poster-4" class="poster"></div>
+            <h4 id="movie-title-4" class="title"></h4>
+            <p id="movie-year-4" class="year"></p>
+          </div>
+        </div>
+        <!-- 시리즈 물 -->
+        <div class="series-row">
+          <div class="item" data-tilt>
+            <div id="series-poster-0" class="poster"></div>
+            <h4 id="series-title-0" class="title"></h4>
+            <p id="series-year-0" class="year"></p>
+          </div>
+          <div class="item" data-tilt>
+            <div id="series-poster-1" class="poster"></div>
+            <h4 id="series-title-1" class="title"></h4>
+            <p id="series-year-1" class="year"></p>
+          </div>
+          <div class="item" data-tilt>
+            <div id="series-poster-2" class="poster"></div>
+            <h4 id="series-title-2" class="title"></h4>
+            <p id="series-year-2" class="year"></p>
+          </div>
+          <div class="item" data-tilt>
+            <div id="series-poster-3" class="poster"></div>
+            <h4 id="series-title-3" class="title"></h4>
+            <p id="series-year-3" class="year"></p>
+          </div>
+          <div class="item" data-tilt>
+            <div id="series-poster-4" class="poster"></div>
+            <h4 id="series-title-4" class="title"></h4>
+            <p id="series-year-4" class="year"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+  <script src="../js/vanilla-tilt.js"></script>
+  <script>
+    const API_KEY = '97d6047b'; // const(상수) 변수이름은 대문자로!!
+    //http://www.omdbapi.com/?apikey=[yourkey]&
+
+    //함수이름에 init이 있으면 초기 실행(페이디ㅏ 로딩 될 때)하는 함수 의미
+
+    initMovie();
+    initSeries();
+
+    function initMovie() {
+      var search = 'love';
+      var type = 'movie';
+      //ajax: 백엔드와 통신(디폴트 : *비동기 통신 ) 비동기와 동기 차이점
+      //비동기와 동기 차이점
+      //POST : insert
+      $.ajax({
+        url: 'http://www.omdbapi.com/?apikey=' + API_KEY + '&s=' + search + '&type=' + type,
+        type: 'GET',
+        dataType: 'json',
+        success: function (response) {
+          for (var i = 0; i < 5; i++) {
+            //console.log(response.Search[i].Title);
+            var posterUrl = response.Search[i].Poster;
+            var html = '<img src = "' + posterUrl + '"</img>';
+            $('#movie-poster-' + i).append(html);
+            $('#movie-title-' + i).append(response.Search[i].Title);
+            $('#movie-year-' + i).append(response.Search[i].Year);
+          }
+        },
+      });
+    }
+
+    function initSeries() {
+      var search = 'love';
+      var type = 'series';
+      $.ajax({
+        url: 'http://www.omdbapi.com/?apikey=' + API_KEY + '&s=' + search + '&type=' + type,
+        type: 'GET',
+        dataType: 'json',
+        success: function (response) {
+          for (var i = 0; i < 5; i++) {
+            var posterUrl = response.Search[i].Poster;
+            var html = '<img src = "' + posterUrl + '"</img>';
+            $('#series-poster-' + i).append(html);
+            $('#series-title-' + i).append(response.Search[i].Title);
+            $('#series-year-' + i).append(response.Search[i].Year);
+          }
+        },
+      });
+    }
+
+    //tt1570728
+    //영화상세정보조회
+    function getMovieDetail() {
+      var movieId = 'tt1570728';
+      $.ajax({
+        url: 'http://www.omdbapi.com/?apikey=' + API_KEY + '&i=' + movieId + ' &plot+full',
+        type: 'GET',
+        dataType: 'json',
+        success: function (response) {
+          //console.log(response);
+          $('#movie-title').append(response.Title);
+          $('#rating').append(response.imdbRating);
+          $('#votes').append(response.imdbVotes);
+          $('#runtime').append(response.Runtime);
+          $('#year').append(response.Year);
+          $('#movie-plot').append(response.Plot);
+          $('#director').append(response.Director);
+          $('#stars').append(response.Actors);
+          $('#generes').append(response.Genre);
+          $('#languages').append(response.Language);
+          $('#awards').append(response.Awards);
+          var html = '<img src="' + response.Poster + '" />';
+          $('#poster-img').append(html);
+        },
+      });
+    }
+  </script>
+</html>
